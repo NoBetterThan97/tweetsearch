@@ -7,17 +7,17 @@ moduel Twitter
 
   class Client
 
-  attr_reader :oauth_token, :default_header
+    attr_reader :default_header
   
-  def initialize(api_key:,api_secrte:)
+  def initialize(api_key:, api_secrte:)
     @oauth_token ||= Base64.urlsafe_encode64("#{api_key}:#{api_secret}")
     @default_header = default_headers
   end
 
   def search_tweets(*tags)
-  HTTParty.get('https://api.twitter.com/1.1/search/tweets.json',
-               headers: default_headers,
-               query: { q: tags.join(' ') }).parsed_response['statuses']
+    HTTParty.get('https://api.twitter.com/1.1/search/tweets.json',
+                 headers: default_header,
+                 query: { q: tags.join(' ') }).parsed_response['statuses']
   end
     
   def authorize!
@@ -34,17 +34,5 @@ moduel Twitter
   end
 
 
-#def credentials
-#  @credentials ||= YAML.load_file('./config/credentials.yml')
-#end
 
-#def oauth_token
-#  @oauth_token ||= Base64.urlsafe_encode64("#{credentials['api_key']}:#{credentials['api_secret']}")
-#end
-
-
-if __FILE__ == $PROGRAM_NAME
-  print 'Hashtags (separated by space): '
-  tags = gets.chomp.split.map { |tag| tag.start_with?('#') ? tag : "##{tag}" }
-  puts search_tweets(tags).map { |tweet| tweet['text'] }.join("\n\n")
 end

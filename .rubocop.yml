@@ -1,0 +1,11 @@
+AllCops:
+  TargetRubyVersion: 2.3
+
+TrailingBlankLines:
+  Enabled: true
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120

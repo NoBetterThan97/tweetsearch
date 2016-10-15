@@ -33,5 +33,5 @@ end
 if __FILE__ == $PROGRAM_NAME
   print 'Hashtags (separated by space): '
   tags = gets.chomp.split.map { |tag| tag.start_with?('#') ? tag : "##{tag}" }
-  puts search_tweets(tags).map { |tweet| tweet['text'] }.join("\n\n")
+  search_tweets(tags).each { |tweet| puts tweet['text'] }
 end

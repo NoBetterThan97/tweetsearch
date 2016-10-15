@@ -4,7 +4,7 @@ require 'base64'
 require 'httparty'
 
 def credentials
-  @credentials ||= YAML.load_file('credentials.yml')
+  @credentials ||= YAML.load_file('./config/credentials.yml')
 end
 
 def oauth_token

@@ -1,11 +1,9 @@
 # frozen_string_literal: true
 source 'https://rubygems.org'
-
+ruby '2.3.1'
 gem 'httparty'
 gem 'rubocop'
 gem 'minitest'
 gem 'minitest-rg'
-gem 'rake'
-gem 'vcr'
-gem 'webmock'
-gem 'simplecov'
+#gem 'pry'
+gem 'pry-coolline'

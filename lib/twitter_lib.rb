@@ -6,10 +6,8 @@ require 'httparty'
 moduel Twitter
 
   class Client
-
-    attr_reader :default_header
   
-  def initialize(api_key:, api_secrte:)
+  def initialize(api_key:, api_secret:)
     @oauth_token ||= Base64.urlsafe_encode64("#{api_key}:#{api_secret}")
     @default_header = default_headers
   end
@@ -35,4 +33,5 @@ moduel Twitter
 
 
 
+  
 end

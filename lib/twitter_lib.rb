@@ -5,13 +5,18 @@ require 'httparty'
 
 module Twitter
   class Client
+    API_BASE = 'https://api.twitter.com/'
+    API_VERSION = '1.1/'
+    SEARCH_TWEET_ENDPOINT = URI.join(API_BASE, API_VERSION, 'search/tweets.json')
+    OAUTH_ENDPOINT = URI.join(API_BASE, 'oauth2/token')
+
     def initialize(api_key:, api_secret:)
       @api_key = api_key
       @api_secret = api_secret
     end
 
     def search_tweets(*tags)
-      HTTParty.get('https://api.twitter.com/1.1/search/tweets.json',
+      HTTParty.get(SEARCH_TWEET_ENDPOINT,
                    headers: authorization_header,
                    query: { q: tags.join(' ') }).parsed_response['statuses']
     end
@@ -23,7 +28,7 @@ module Twitter
     end
 
     def authorization_response
-      @authorization_response ||= HTTParty.post('https://api.twitter.com/oauth2/token',
+      @authorization_response ||= HTTParty.post(OAUTH_ENDPOINT,
                                                 headers: { Authorization: "Basic #{oauth_token}" },
                                                 query: { grant_type: 'client_credentials' }).parsed_response
     end

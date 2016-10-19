@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require 'minitest/rg'
 require 'yaml'
-require './lib/twitter_lib.rb'
+require './lib/twitter/client.rb'
 
 CREDENTIALS = YAML.load(File.read('config/credentials.yml'))
 tags = '#food'

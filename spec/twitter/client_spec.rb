@@ -9,7 +9,7 @@ tags = '#food'
 
 describe 'Twitter::Client#search_tweets' do
   it 'should return Tweets that contain specific hashtags' do
-    client = Twitter::Client.new(api_key: CREDENTIALS['api_key'], api_secret: CREDENTIALS['api_secret'])
+    client = Twitter::Client.new(access_token: CREDENTIALS['access_token'])
     client.search_tweets(tags).wont_be_nil
   end
 end

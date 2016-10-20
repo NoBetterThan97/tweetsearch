@@ -1,3 +1,5 @@
 # secret files
 
 /config/credentials.yml
+
+coverage/

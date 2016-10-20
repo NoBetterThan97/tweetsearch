@@ -1,4 +1,7 @@
 # frozen_string_literal: true
+require 'simplecov'
+SimpleCov.start
+
 require './spec/spec_helper.rb'
 require './lib/twitter/client.rb'
 

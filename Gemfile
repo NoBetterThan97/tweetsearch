@@ -10,4 +10,5 @@ gem 'minitest-rg'
 
 gem 'pry-coolline'
 
+gem 'rake'
 gem 'rubocop'

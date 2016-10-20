@@ -4,7 +4,7 @@ require './lib/twitter/client.rb'
 require './lib/twitter/tweet.rb'
 
 CREDENTIALS = YAML.load(File.read('config/credentials.yml'))
-CLIENT = Twitter::Client.new(api_key: CREDENTIALS['api_key'], api_secret: CREDENTIALS['api_secret'])
+CLIENT = Twitter::Client.new(access_token: CREDENTIALS['access_token'])
 tags = '#food'
 
 describe 'Twitter::Tweet::search' do

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
-require '../spec_helper.rb'
+require './spec/spec_helper.rb'
 
-CLIENT = Twitter::Client.new(access_token: CREDENTIALS['access_token'])
+#CLIENT = Twitter::Client.new(access_token: CREDENTIALS['access_token'])
 tags = '#food'
 
 describe 'Twitter::Tweet::search' do
@@ -24,7 +24,7 @@ describe 'Twitter::Tweet::search' do
       access_token: CREDENTIALS[:access_token]
     )
     @CLIENT.search_tweets(tags)
-    
+
   end
 
   after do

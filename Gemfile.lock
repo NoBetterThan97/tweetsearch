@@ -1,11 +1,17 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.4.0)
     ast (2.3.0)
     coolline (0.5.0)
       unicode_utils (~> 1.4)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
+    docile (1.1.5)
+    hashdiff (0.3.0)
     httparty (0.14.0)
       multi_xml (>= 0.5.2)
+    json (2.0.2)
     minitest (5.9.1)
     minitest-rg (5.2.0)
       minitest (~> 5.0)
@@ -24,8 +30,19 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    safe_yaml (1.0.4)
+    simplecov (0.12.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
     unicode-display_width (1.1.1)
     unicode_utils (1.4.0)
+    vcr (3.0.3)
+    webmock (2.1.0)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
 
 PLATFORMS
   ruby
@@ -37,16 +54,12 @@ DEPENDENCIES
   pry-coolline
   rake
   rubocop
-  flay
-  flog
   simplecov
   vcr
   webmock
-  
 
 RUBY VERSION
    ruby 2.3.1p112
-   
 
 BUNDLED WITH
-   1.13.4
+   1.12.3

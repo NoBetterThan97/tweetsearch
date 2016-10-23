@@ -18,6 +18,11 @@ namespace :util do
                                                    query: { grant_type: 'client_credentials' }).parsed_response
     puts "Access Token: #{token_response['access_token']}"
   end
+
+  desc 'deletes cassettes'
+  task :delete_cassettes do
+    sh 'rm -r spec/support/cassettes'
+  end
 end
 
 namespace :quality do

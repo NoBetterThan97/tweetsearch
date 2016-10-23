@@ -13,11 +13,11 @@
 2. Run tests
 
   ```bash
-  $ rake test
+  $ bundle exec rake test
   ```
 
 3. Run quality tests
 
   ```bash
-  $ rake quality
+  $ bundle exec rake quality
   ```

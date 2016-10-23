@@ -13,5 +13,11 @@
 2. Run tests
 
   ```bash
-  $ ruby spec/twitter/client_spec.rb
+  $ bundle exec rake test
+  ```
+
+3. Run quality tests
+
+  ```bash
+  $ bundle exec rake quality
   ```

@@ -1,5 +1,7 @@
 # Twitter API
 
+[![Build Status](https://travis-ci.org/NoBetterThan97/tweetsearch.svg?branch=master)](https://travis-ci.org/NoBetterThan97/tweetsearch)
+
 :hammer: Everything from scratch
 
 ## Usage

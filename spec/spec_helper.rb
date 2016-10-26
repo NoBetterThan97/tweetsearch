@@ -4,12 +4,15 @@ SimpleCov.start
 
 require 'vcr'
 require 'yaml'
+require 'dotenv'
 require 'webmock'
 require 'minitest/rg'
 require 'minitest/autorun'
 
 require_relative '../lib/tweetsearch/twitter_client.rb'
 require_relative '../lib/tweetsearch/tweet.rb'
+
+Dotenv.load
 
 CASSETTES_FOLDER = 'spec/support/cassettes'
 TAGS = ['#food', '#yum'].freeze

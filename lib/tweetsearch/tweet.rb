@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-module Twitter
+module TweetSearch
   class Tweet
     attr_reader :id, :created_at, :text
 

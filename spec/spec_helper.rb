@@ -4,22 +4,24 @@ SimpleCov.start
 
 require 'vcr'
 require 'yaml'
+require 'dotenv'
 require 'webmock'
 require 'minitest/rg'
 require 'minitest/autorun'
 
-require_relative '../lib/twitter/client.rb'
-require_relative '../lib/twitter/tweet.rb'
+require_relative '../lib/tweetsearch/twitter_client.rb'
+require_relative '../lib/tweetsearch/tweet.rb'
+
+Dotenv.load
 
 CASSETTES_FOLDER = 'spec/support/cassettes'
-CREDENTIALS = YAML.load_file('config/credentials.yml')
 TAGS = ['#food', '#yum'].freeze
 
 VCR.configure do |config|
   config.cassette_library_dir = CASSETTES_FOLDER
   config.hook_into :webmock
 
-  config.filter_sensitive_data('<ACCESS_TOKEN>') { CREDENTIALS[:access_token] }
+  config.filter_sensitive_data('<ACCESS_TOKEN>') { ENV['access_token'] }
 end
 
 def cassette_name(path_to_spec, description)

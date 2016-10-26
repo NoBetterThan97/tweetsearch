@@ -2,8 +2,8 @@
 require 'yaml'
 require 'httparty'
 
-module Twitter
-  class Client
+module TweetSearch
+  class TwitterClient
     API_BASE = 'https://api.twitter.com/'
     API_VERSION = '1.1/'
     SEARCH_TWEET_ENDPOINT = URI.join(API_BASE, API_VERSION, 'search/tweets.json')

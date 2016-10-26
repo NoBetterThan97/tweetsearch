@@ -1,5 +1,5 @@
 # secret files
+.env
 
-/config/credentials.yml
-
+# coverage report
 coverage/

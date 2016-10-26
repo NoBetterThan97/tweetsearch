@@ -8,9 +8,9 @@
 
 1. Get application access token
 
-  - Fill in `api_key` and `api_secret` in `config/credentials.yml`
+  - Fill in `api_key` and `api_secret` in `.env`
   - Run `rake util:access_token`
-  - Fill in the `access_token` in `config/credentials.yml`
+  - Fill in the `access_token` in `.env`
 
 2. Run tests
 

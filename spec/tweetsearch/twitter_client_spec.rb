@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 require_relative '../spec_helper.rb'
 
-describe 'Twitter::Tweet::search' do
+describe 'TweetSearch::TwitterClient#search_tweets' do
   before do
     VCR.insert_cassette(cassette_name(__FILE__, name), record: :new_episodes)
 
-    @client = Twitter::Client.new(access_token: CREDENTIALS['access_token'])
+    @client = TweetSearch::TwitterClient.new(access_token: ENV['access_token'])
   end
 
   after do
@@ -13,7 +13,6 @@ describe 'Twitter::Tweet::search' do
   end
 
   it 'should return Tweets that contain specific hashtags' do
-    tweets = Twitter::Tweet.search(TAGS, using_client: @client)
-    tweets.length.must_be :>, 0
+    @client.search_tweets(TAGS).wont_be_nil
   end
 end

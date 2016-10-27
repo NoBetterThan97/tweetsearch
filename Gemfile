@@ -3,6 +3,8 @@ ruby '2.3.1'
 
 source 'https://rubygems.org'
 
+gemspec
+=begin
 gem 'dotenv'
 
 gem 'flay'
@@ -21,3 +23,4 @@ gem 'simplecov'
 gem 'vcr'
 
 gem 'webmock'
+=end

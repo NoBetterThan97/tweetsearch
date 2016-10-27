@@ -3,3 +3,7 @@
 
 # coverage report
 coverage/
+
+#config
+
+config/

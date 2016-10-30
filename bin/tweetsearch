@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), *%w(.. lib))
+require 'tweetsearch'
+
+print 'Hashtags (separated by space): '
+@tags = gets.chomp.split.map { |tag| tag.start_with?('#') ? tag : "##{tag}" }
+@client = TweetSearch::TwitterClient.new(access_token: ＠access_token)
+tweets = TweetSearch::Tweet.search(@tags, using_client: @client)
+print tweets

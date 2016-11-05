@@ -29,4 +29,5 @@ def cassette_name(path_to_spec, description)
   spec_description = description.gsub(/^test_[0-9]+_/, '')
 
   "#{spec_filename} #{spec_description}"
+  credentials = Dotenv.load
 end

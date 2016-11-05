@@ -5,7 +5,7 @@ describe 'TweetSearch::TwitterClient#search_tweets' do
   before do
     VCR.insert_cassette(cassette_name(__FILE__, name), record: :new_episodes)
 
-    @client = TweetSearch::TwitterClient.new(access_token: ENV['access_token'])
+    @client = TweetSearch::TwitterClient.config = {access_token: ENV['access_token']}
   end
 
   after do

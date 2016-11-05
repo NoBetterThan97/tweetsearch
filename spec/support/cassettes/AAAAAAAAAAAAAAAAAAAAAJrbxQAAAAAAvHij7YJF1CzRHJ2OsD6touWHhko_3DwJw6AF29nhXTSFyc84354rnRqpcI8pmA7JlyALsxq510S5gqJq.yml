@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?q=%23food%20%23yum
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Length:
+      - '62'
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sat, 05 Nov 2016 17:34:37 GMT
+      Server:
+      - tsa_m
+      Set-Cookie:
+      - guest_id=v1%3A147836727784754847; Domain=.twitter.com; Path=/; Expires=Mon,
+        05-Nov-2018 17:34:37 UTC
+      Strict-Transport-Security:
+      - max-age=631138519
+      X-Connection-Hash:
+      - 88b8bad1c213f46362a098d7b4198109
+      X-Response-Time:
+      - '102'
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":215,"message":"Bad Authentication data."}]}'
+    http_version: 
+  recorded_at: Sat, 05 Nov 2016 17:34:37 GMT
+recorded_with: VCR 3.0.3

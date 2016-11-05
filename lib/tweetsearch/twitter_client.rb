@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 require 'yaml'
 require 'httparty'
+require 'dotenv'
+
+Dotenv.load
 
 module TweetSearch
   class TwitterClient
@@ -18,10 +21,19 @@ module TweetSearch
                    query: { q: tags.join(' ') }).parsed_response['statuses']
     end
 
+    def self.config=(credentials)
+       @config ? @config.update(credentials) : @config = credentials
+     end
+
+     def self.config
+       return @config if @config
+       @config = { access_token: ENV['access_token'] }
+     end
+
     private
 
     def authorization_header
-      @authorization_header ||= { Authorization: "Bearer #{@access_token}" }
+        @authorization_header ||= { Authorization: "Bearer #{@config}" }
     end
   end
 end

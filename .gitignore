@@ -5,5 +5,10 @@
 coverage/
 
 #config
-
 config/
+
+# lock file
+Gemfile.lock
+
+# product
+*.gem

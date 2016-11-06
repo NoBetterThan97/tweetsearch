@@ -9,9 +9,8 @@ module TweetSearch
       @text = data['text']
     end
 
-    def self.search(*tags, using_client:)
-      client = using_client
-      client.search_tweets(tags).map { |data| new(data) }
+    def self.search(*tags)
+      TwitterClient.search_tweets(tags).map { |data| new(data) }
     end
   end
 end

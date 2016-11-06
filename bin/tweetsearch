@@ -5,8 +5,8 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'tweetsearch'
 
-if ENV['access_token'].nil?
-  puts '`access_token` not found, please make sure `access_token` is set in the environment variable'
+if ENV['ACCESS_TOKEN'].nil?
+  puts '`ACCESS_TOKEN` not found, please make sure `ACCESS_TOKEN` is set in the environment variable'
   exit(1)
 end
 

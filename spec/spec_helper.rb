@@ -21,7 +21,7 @@ VCR.configure do |config|
   config.cassette_library_dir = CASSETTES_FOLDER
   config.hook_into :webmock
 
-  config.filter_sensitive_data('<ACCESS_TOKEN>') { ENV['access_token'] }
+  config.filter_sensitive_data('<ACCESS_TOKEN>') { ENV['ACCESS_TOKEN'] }
 end
 
 def cassette_name(path_to_spec, description)

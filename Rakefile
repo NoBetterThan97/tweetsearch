@@ -15,7 +15,7 @@ namespace :util do
   desc 'Generate new access token'
   task :access_token do
     OAUTH_ENDPOINT = 'https://api.twitter.com/oauth2/token'
-    basic_token = Base64.urlsafe_encode64("#{ENV['api_key']}:#{ENV['api_secret']}")
+    basic_token = Base64.urlsafe_encode64("#{ENV['API_KEY']}:#{ENV['API_SECRET']}")
     token_response = HTTParty.post(OAUTH_ENDPOINT, headers: { Authorization: "Basic #{basic_token}" },
                                                    query: { grant_type: 'client_credentials' }).parsed_response
     puts "Access Token: #{token_response['access_token']}"

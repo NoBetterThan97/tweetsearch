@@ -13,7 +13,7 @@ module TweetSearch
     end
 
     def self.config
-      @config ||= { access_token: ENV['access_token'] }
+      @config ||= { access_token: ENV['ACCESS_TOKEN'] }
     end
 
     def self.search_tweets(*tags)

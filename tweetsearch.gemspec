@@ -29,7 +29,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop', '~> 0.42'
   s.add_development_dependency 'httparty', '~> 0.14'
 
-
   s.homepage    =  'https://github.com/NoBetterThan97/tweetsearch'
   s.license     =  'MIT'
 end

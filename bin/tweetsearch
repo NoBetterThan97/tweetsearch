@@ -13,6 +13,12 @@ end
 print 'Hashtags (separated by space): '
 tags = gets.chomp.split.map { |tag| tag.start_with?('#') ? tag : "##{tag}" }
 
-tweets = TweetSearch::Tweet.search(tags)
+print 'With media only? (Y/N): '
+media_only = gets.chomp.casecmp('Y')
 
-tweets.each { |item| print item.text + "\n" }
+tweets = TweetSearch::Tweet.find_by(tags: tags, media_only: media_only)
+
+tweets.each do |item|
+  puts item.text
+  item.media_urls.each { |url| puts "\t#{url}" } if media_only
+end

@@ -11,7 +11,7 @@ describe 'TweetSearch::Tweet::search' do
   end
 
   it 'should return Tweets that contain specific hashtags' do
-    tweets = TweetSearch::Tweet.search(TAGS)
+    tweets = TweetSearch::Tweet.find_by(tags: TAGS)
     tweets.length.must_be :>, 0
   end
 end

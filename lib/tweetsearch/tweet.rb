@@ -10,9 +10,9 @@ module TweetSearch
       @media_urls = data.dig('entities', 'media')&.map { |media| media['media_url_https'] }
     end
 
-    def self.find_by(tags:, media_only: false)
+    def self.find_by(tags:, **options)
       tweets = TwitterClient.search_tweets(tags)
-      tweets.select! { |data| data.dig('entities', 'media') } if media_only
+      tweets.select! { |data| data.dig('entities', 'media') } if options[:media_only]
       tweets.map { |data| new(data) }
     end
   end
